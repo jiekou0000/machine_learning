@@ -1,14 +1,51 @@
 基本概念(sklearn -- tensorflow)：
     https://www.jianshu.com/p/0837b7c6ce10
     https://www.jianshu.com/p/145c09418035
-    
-机器学习的方法包括：
+  
+机器学习的类型：
     监督学习 supervised learning;
     非监督学习 unsupervised learning;
     半监督学习 semi-supervised learning;
     强化学习 reinforcement learning;
     遗传算法 genetic algorithm.
-
+    
+机器学习的方式：
+    Classification 分类
+    Regression 回归
+    Clustering 聚类
+    Dimensionality reduction 降维
+    Model Selection 模型选择
+    Preprocessing 数据预处理
+    
+机器学习
+    类型：
+        监督学习：
+            任务(方式)：
+                分类：线性、决策树、SVM、KNN，朴素贝叶斯；集成分类：随机森林、Adaboost、GradientBoosting、Bagging、ExtraTrees
+                回归：线性、决策树、SVM、KNN ；集成回归：随机森林、Adaboost、GradientBoosting、Bagging、ExtraTrees
+        无监督学习：
+            任务(方式)：
+                聚类：k均值（K-means）、层次聚类（Hierarchical clustering）、DBSCAN
+                降维：LinearDiscriminantAnalysis、PCA
+        半监督学习：
+            ...
+        
+   主要步骤中sklearn应用：
+       数据集、数据预处理、选择模型并训练、模型评分、模型的保存与恢复
+       
+sklearn：
+    sklearn提供了强大的特征工程，比如选择特征、压缩维度、转换格式等，满足了传统机器学习需要手动进行数据处理的要求。
+    sklearn中大部分函数都可以归为Estimator和Transformer两类：
+        Estimator实际上实就是模型，它用于对数据的预测或回归。基本上预估函数都会有以下几个方法：
+            fit(x,y)：进行模型训练
+            score(x,y)：对模型的正确率进行评分。
+            predict(x)：对数据进行预测，用于评估模型。
+        Transformer用于对数据进行处理，例如标准化、降维以及特征选择等等。与估计器的使用方法类似:
+            fit(x,y)：计算数据变换的方式。
+            transform(x)：返回数据x变换后的结果
+            fit_transform(x,y)：既包含训练，又包含转换。
+    
+    
 特征工程的一般步骤如下：
     确定任务：根据实际业务确定需要解决的问题
     数据选择：整合数据
@@ -37,18 +74,18 @@
 资源：
     （1）基础篇
         书籍：
-            1.统计机器学习。李航
-            2.机器学习。周志华
+            1.《统计学习方法》-李航 
+            2.《机器学习》-周志华
         视频：
-            1.机器学习。斯坦福。吴恩达
+            *1.《机器学习》-斯坦福，吴恩达，网易云  Octave
             2.Tom Mitchell(CMU)机器学习
     （2）升级篇
         书籍:
-            1.机器学习实战
+            *1.《机器学习实战》，基于sklearn和tf
             2.深度学习-AI圣经
         视频：
             1.Learning from Data
-            2.機器學習基石
+            2.机器学习基石
     （3）实战篇
 
     
@@ -71,25 +108,6 @@
         >>>import sklearn
         >>>sklearn.__version__
        
-
-机器学习
-    类型：
-        监督学习：
-            任务(方式)：
-                分类：线性、决策树、SVM、KNN，朴素贝叶斯；集成分类：随机森林、Adaboost、GradientBoosting、Bagging、ExtraTrees
-                回归：线性、决策树、SVM、KNN ；集成回归：随机森林、Adaboost、GradientBoosting、Bagging、ExtraTrees
-        无监督学习：
-            任务(方式)：
-                聚类：k均值（K-means）、层次聚类（Hierarchical clustering）、DBSCAN
-                降维：LinearDiscriminantAnalysis、PCA
-        半监督学习：
-            ...
-        
-   主要步骤中sklearn应用：
-       数据集、数据预处理、选择模型并训练、模型评分、模型的保存与恢复
-           
-    
-    
     
     
     
@@ -125,4 +143,13 @@
   以预测平安银行(000001.SZ)股价走势为demo将机器学习算法运用到实践
   
   通过机器学习的线性回归算法预测股票走势（Python实现）
+        
+      
+Extend:
+    离散数据：伯努利分布、二项分布、多项分布、Beta分布、狄里克莱分布以及泊松分布；   离线数据：高斯分布、指数分布族
+    学习流程：朴素贝叶斯 --> 逻辑回归
+      --> 线性模型和树形模型，分别对应着 线性回归/逻辑回归 和 决策回归/分类树
+       线性模型的复杂形式就是多层线性模型，也就是神经网络。树模型的复杂形式包括以 GDBT 为代表的 boosting 组合，以及以随机森林为代表的 bagging 组合
+    R ，Scala    Hadoop，Spark
+        
         
