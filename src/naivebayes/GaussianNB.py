@@ -8,7 +8,11 @@ iris = datasets.load_iris()
 gnb = GaussianNB()
 
 # y_pred = gnb.fit(iris.data, iris.target).predict(iris.data)
+# print("Number of mislabeled points out of a total %d points : %d" % (iris.data.shape[0],(iris.target != y_pred).sum()))
 # print(iris.target == y_pred)  # 倒数第17个点[6.3, 2.8, 5.1, 1.5, 2]不在模型中
+# error = (iris.target != y_pred).sum()
+# print('the total number of errors: %d' % error)
+# print('the total error rate: %.4f' % (error/float(iris.data.shape[0])))
 
 train_data = iris.data[:148]
 train_target = iris.target[:148]
@@ -23,4 +27,6 @@ print(gnb.score([[6.3, 2.8, 5.1, 1.5]], [0]))
 print(gnb.score([[6.3, 2.8, 5.1, 1.5]], [1]))
 print(gnb.score([[6.3, 2.8, 5.1, 1.5]], [2]))
 print(gnb.predict([[6.3, 2.8, 5.1, 1.5]]))
+
+
 
