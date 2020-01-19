@@ -1,0 +1,37 @@
+3 模型选择和评估
+    3.1 交叉验证：评估估算器的表现 (train_test_split)
+        3.1.1 计算交叉验证的指标 (cross_val_score: scoring参数的选用、cv参数是一个整数时默认使用KFold或StratifiedKFold策略，后者会在估计器派生自ClassifierMixin时使用 cv可自定义其它交叉验证策略)
+            3.1.1.1 cross_validate函数和多度量评估(多个度量参数)
+            3.1.1.2 通过交叉验证获取预测(cross_val_predict)
+
+        3.1.2 交叉验证迭代器
+            3.1.2.1 交叉验证迭代器-循环遍历数据
+                3.1.2.1.1 K折(KFold: n_splits：表示划分几等份(几个结果))
+                3.1.2.1.2 重复K折交叉验证(RepeatedKFold: KFold n次，在每次重复中产生不同的分割)
+                3.1.2.1.3 留一交叉验证 (LOO-LeaveOneOut: 每个样本都用作测试集（单个）)
+                3.1.2.1.4. 留P交叉验证 (LPO-LeavePOut)
+                3.1.2.1.5. 随机排列交叉验证 a.k.a. Shuffle & Split(ShuffleSplit: 样例被打散, 可以替代KFold交叉验证，因为其提供了细致的训练/测试划分的数量和样例所占的比例等的控制)
+            3.1.2.2 基于类标签、具有分层的交叉验证迭代器(目标类别的分布上表现出很大的不平衡性:出现比正样本多数倍的负样本。相当于按分布比例取值训练)
+                3.1.2.2.1 分层k折(StratifiedKFold、RepeatedStratifiedKFold)
+                3.1.2.2.2 分层随机Split(StratifiedShuffleSplit)
+            3.1.2.3 用于分组数据的交叉验证迭代器
+                3.1.2.3.1 组k-fold(GroupKFold: 每个组单独存在于一个fold中，不会出现在其它fold。防止过拟合)
+                3.1.2.3.2 留一组交叉验证(LeaveOneGroupOut)
+                3.1.2.3.3 留P组交叉验证(LeavePGroupsOut)
+                3.1.2.3.4 Group Shuffle Split(GroupShuffleSplit)
+            3.1.2.4 预定义的折叠/验证集(将数据划分为训练和验证集合或者划分为几个交叉验证集合的划分已经存在)
+            3.1.2.5 交叉验证在时间序列数据中应用
+                3.1.2.5.1 时间序列分割(TimeSeriesSplit)
+
+        3.1.3 A note on shuffling(random_state)
+
+        3.1.4 交叉验证和模型选择(交叉验证迭代器可以通过网格搜索得到最优的模型超参数，从而直接用于模型的选择--3.2)
+
+
+    3.2 调整估计器的超参数(超参数: 即不直接在估计器内学习的参数，且作为估计器类中构造函数的参数进行传递，如Lasso的alpha。 estimator.get_params())
+
+
+
+
+
+

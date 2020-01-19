@@ -1,0 +1,25 @@
+函数名：train_test_split
+所在包：sklearn.model_selection
+功能：划分数据的训练集与测试集
+参数解读：train_test_split (*arrays，test_size, train_size, rondom_state=None, shuffle=True, stratify=None)
+    arrays：特征数据和标签数据（array，list，dataframe等类型），要求所有数据长度相同。
+    test_size / train_size: 测试集/训练集的大小，若输入小数表示比例，若输入整数表示数据个数。
+    rondom_state：随机种子（一个整数），其实就是一个划分标记，对于同一个数据集，如果rondom_state相同，则划分结果也相同。
+    shuffle：是否打乱数据的顺序，再划分，默认True。
+    stratify：none或者array/series类型的数据，表示按这列进行分层采样。
+
+
+K折交叉验证：sklearn.model_selection.KFold(n_splits=3, shuffle=False, random_state=None)
+思路：将训练/测试数据集划分n_splits个互斥子集，每次用其中一个子集当作验证集，剩下的n_splits-1个作为训练集，进行n_splits次训练和测试，得到n_splits个结果
+注意点：对于不能均等份的数据集，其前n_samples % n_splits子集拥有n_samples // n_splits + 1个样本，其余子集都只有n_samples // n_splits样本
+参数说明：
+    n_splits：表示划分几等份(几个结果)
+    shuffle：在每次划分时，是否进行洗牌
+    ①若为Falses时，其效果等同于random_state等于整数，每次划分的结果相同
+    ②若为True时，每次划分的结果都不一样，表示经过洗牌，随机取样的
+    random_state：随机种子数
+属性：
+    ①get_n_splits(X=None, y=None, groups=None)：获取参数n_splits的值
+    ②split(X, y=None, groups=None)：将数据集划分成训练集和测试集，返回索引生成器
+
+

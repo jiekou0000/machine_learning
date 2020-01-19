@@ -1,0 +1,37 @@
+1 监督学习
+    1.1 广义线性模型
+
+
+    1.4 支持向量机(SVMs，可用于分类,回归和异常检测)
+        1.4.1 分类(SVC, NuSVC 和 LinearSVC 能在数据集中实现多元分类)
+            1.4.1.1 多元分类(decision_function_shape.  LinearSVC-ovr)
+            1.4.1.2 得分和概率(建议设置probability=False并使用decision_function而不是 predict_proba)
+            1.4.1.3 非均衡问题(期望给予某一类或某个别样例能使用的关键词class_weight和sample_weight提高权重)
+
+        1.4.2 回归( SVR, NuSVR 和 LinearSVR)
+
+        1.4.3 密度估计，异常(novelty)检测(OneClassSVM)
+
+        1.4.4 复杂度
+
+        1.4.5 使用诀窍
+
+        1.4.6 核函数
+            1.4.6.1 自定义核
+                1.4.6.1.1 使用python函数作为内核
+                1.4.6.1.2 使用Gram矩阵
+                1.4.6.1.3 RBF内核参数
+
+        1.4.7 数学公式
+            1.4.7.1 SVC
+            1.4.7.2 NuSVC
+            1.4.7.3 SVR
+
+        1.4.8 实现细节(底层使用libsvm和liblinear去处理所有的计算)
+
+
+
+    1.13 特征选择
+        
+
+

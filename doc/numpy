@@ -1,0 +1,4 @@
+arange(start, stop, step, dtype = None): 用于生成一维array
+reshape(): 将一维array转换为多维array
+range(): 用于生成一维list，步长只能为int型
+meshgrid(): 生成网格点坐标矩阵
