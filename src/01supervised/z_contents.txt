@@ -31,7 +31,22 @@
 
 
 
-    1.13 特征选择
+    1.13 特征选择(主要方法：1.Filter(过滤式)：VarianceThreshold。2.Embedded(嵌入式)：正则化、决策树。 3.Wrapper(包裹式)。 4.神经网络)
+        1.13.1 移除低方差特征(VarianceThreshold. 1.冗余：部分特征的相关度高，容易消耗计算性能。 2.噪声(过拟合)：部分特征对预测结果有负影响)
+
+        1.13.2 单变量特征选择
+            SelectKBest、SelectPercentile、SelectFpr、SelectFdr、SelectFwe、GenericUnivariateSelect
+            这些对象将得分函数作为输入，返回单变量的得分和 p 值 （或者仅仅是 SelectKBest 和 SelectPercentile 的分数）:
+                对于回归: f_regression , mutual_info_regression
+                对于分类: chi2 , f_classif , mutual_info_classif
+
+        1.13.3 递归式特征消除
+
+        1.13.4 使用SelectFromModel选取特征
+            1.13.4.1 基于 L1 的特征选取
+            1.13.4.2 基于Tree的特征选取
+
+        1.13.5 特征选取作为pipeline的一部分
         
 
 
