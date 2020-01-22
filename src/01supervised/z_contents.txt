@@ -7,45 +7,57 @@
             1.4.1.1 多元分类(decision_function_shape.  LinearSVC-ovr)
             1.4.1.2 得分和概率(建议设置probability=False并使用decision_function而不是 predict_proba)
             1.4.1.3 非均衡问题(期望给予某一类或某个别样例能使用的关键词class_weight和sample_weight提高权重)
-
         1.4.2 回归( SVR, NuSVR 和 LinearSVR)
-
         1.4.3 密度估计，异常(novelty)检测(OneClassSVM)
-
         1.4.4 复杂度
-
         1.4.5 使用诀窍
-
         1.4.6 核函数
             1.4.6.1 自定义核
                 1.4.6.1.1 使用python函数作为内核
                 1.4.6.1.2 使用Gram矩阵
                 1.4.6.1.3 RBF内核参数
-
         1.4.7 数学公式
             1.4.7.1 SVC
             1.4.7.2 NuSVC
             1.4.7.3 SVR
-
         1.4.8 实现细节(底层使用libsvm和liblinear去处理所有的计算)
 
+
+    1.5 随机梯度下降(SGD. 主要应用在大规模稀疏数据问题上fit_intercept)
+        1.5.1 分类(SGDClassifier)
+        1.5.2 回归(SGDRegressor)
+        1.5.3 稀疏数据的随机梯度下降
+        1.5.4 复杂度
+        1.5.5 停止判据
+        1.5.6 实用小贴士
+        1.5.7 数学描述
+            1.5.7.1 SGD
+        1.5.8 实现细节
+
+
+    1.10 决策树(DTs)
+        1.10.1 分类(DecisionTreeClassifier)
+        1.10.2 回归(DecisionTreeRegressor)
+        1.10.3 多值输出问题
+        1.10.4 复杂度分析
+        1.10.5 实际使用技巧
+        1.10.6 决策树算法：ID3, C4.5, C5.0和CART
+        1.10.7 数学表达
+            1.10.7.1 分类标准
+            1.10.7.2 回归标准
 
 
     1.13 特征选择(主要方法：1.Filter(过滤式)：VarianceThreshold。2.Embedded(嵌入式)：正则化、决策树。 3.Wrapper(包裹式)。 4.神经网络)
         1.13.1 移除低方差特征(VarianceThreshold. 1.冗余：部分特征的相关度高，容易消耗计算性能。 2.噪声(过拟合)：部分特征对预测结果有负影响)
-
         1.13.2 单变量特征选择
             SelectKBest、SelectPercentile、SelectFpr、SelectFdr、SelectFwe、GenericUnivariateSelect
             这些对象将得分函数作为输入，返回单变量的得分和 p 值 （或者仅仅是 SelectKBest 和 SelectPercentile 的分数）:
                 对于回归: f_regression , mutual_info_regression
                 对于分类: chi2 , f_classif , mutual_info_classif
-
         1.13.3 递归式特征消除
-
         1.13.4 使用SelectFromModel选取特征
             1.13.4.1 基于 L1 的特征选取
             1.13.4.2 基于Tree的特征选取
-
         1.13.5 特征选取作为pipeline的一部分
         
 
