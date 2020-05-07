@@ -1,0 +1,16 @@
+主要用于凸损失函数下线性分类器的判别式学习，例如(线性) 支持向量机 和 Logistic 回归
+在 large-scale learning （大规模学习）方面 SGD 获得了相当大的关注
+
+优势：
+    高效
+    易于实现 (有大量优化代码的机会)。
+
+劣势：
+    SGD 需要一些超参数，例如 regularization （正则化）参数和 number of iterations （迭代次数）
+    SGD 对 feature scaling （特征缩放）敏感
+
+
+应用梯度下降时，需要保证所有特征值的大小比例都差不多 （比如使用Scikit-Learn的StandardScaler类），否则收敛的时间会长很多。
+
+随机性的好处在于可以逃离局部最优，但缺点是永远定位不出最小值。
+

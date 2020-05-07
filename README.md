@@ -90,7 +90,7 @@ sklearn：
 
 
     
-文档(本工程为0.21.3版本)：
+文档(本工程为0.19.0版本)：
     https://scikit-learn.org/stable/  官方文档(查阅对应版本)
     https://sklearn.apachecn.org  中文文档
     
@@ -103,6 +103,8 @@ sklearn：
         打开Anaconda Prompt，输入以下命令
             conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
             conda config --set show_channel_urls yes
+            
+   pycharm结合anaconda管理项目环境：https://blog.csdn.net/JT_WPC/article/details/86355903
     
    查看sklearn版本：
         >python
